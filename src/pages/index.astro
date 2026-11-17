@@ -6,17 +6,17 @@ const skills = [
 	{
 		cmd: 'frontend',
 		title: 'Frontend Development',
-		body: 'Fast, accessible interfaces that feel good to use.',
+        body: 'Fast, clean, modern interfaces that bring you joy.',
 	},
 	{
 		cmd: 'backend',
 		title: 'Backend Development',
-		body: 'APIs, data models, and services that hold up under load.',
+        body: 'APIs, data models, and reliable services at any scale.',
 	},
 	{
 		cmd: 'infra',
-		title: 'DevOps & Cloud Infrastructure',
-		body: 'CI/CD, containers, and cloud infra that ships and stays up.',
+		title: 'Cloud Infrastructure',
+		body: 'CI/CD, containers, and cloud infra that ships and stays floating.',
 	},
 ];
 ---
@@ -30,9 +30,9 @@ const skills = [
 		<meta name="generator" content={Astro.generator} />
 		<meta
 			name="description"
-			content="Gilbert Yoder — software engineer in Bonners Ferry, Idaho. Frontend, backend, DevOps and cloud."
+			content="Gilbert Yoder — software developer in Bonners Ferry, Idaho. Frontend, backend, DevOps and cloud."
 		/>
-		<title>Gilbert Yoder — Software Engineer</title>
+		<title>Gilbert Yoder — Software Developer</title>
 	</head>
 	<body>
 		<main>
@@ -59,10 +59,13 @@ const skills = [
 					<p class="prompt">$ whoami</p>
 					<h1>Gilbert Yoder</h1>
 					<p class="lede">
-						Software engineer who can do <em>anything</em> between the browser and the
+						Software developer who can do <em>anything</em> between the browser and the
 						data center.
 					</p>
 					<p class="loc">📍 Bonners Ferry, Idaho</p>
+					<a class="btn" href="mailto:yodergilbert1@gmail.com?subject=Hello%20Gilbert">
+						Get in touch →
+					</a>
 				</div>
 			</section>
 
@@ -189,6 +192,29 @@ const skills = [
 		margin: 0;
 		color: var(--muted);
 		font-size: 0.9rem;
+	}
+
+	.btn {
+		display: inline-block;
+		margin-top: 1.25rem;
+		padding: 0.6rem 1.1rem;
+		border: 2px solid var(--ink);
+		background: var(--accent);
+		color: var(--paper);
+		font-weight: 700;
+		text-decoration: none;
+		box-shadow: 4px 4px 0 var(--ink);
+		transition: transform 0.12s, box-shadow 0.12s;
+	}
+
+	.btn:hover {
+		transform: translate(2px, 2px);
+		box-shadow: 2px 2px 0 var(--ink);
+	}
+
+	.btn:focus-visible {
+		outline: 2px solid var(--ink);
+		outline-offset: 3px;
 	}
 
 	h2 {
