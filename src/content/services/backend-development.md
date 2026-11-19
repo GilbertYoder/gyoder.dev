@@ -6,9 +6,9 @@ description: Backend development in Bonners Ferry, Idaho — APIs, databases, an
 order: 2
 ---
 
-A good-looking site can't do much without business logic behind it. The backend is where your data lives, your business logic operates, and your software talks to everything.
+A good-looking site can't do much without business logic behind it. The backend is where your data lives, your business logic operates, and your software talks to other services.
 
-I build services that are secure, easy to maintain, and well tested. I'm also pragmatic about what I provide. Not every service needs to handle billions of requests per day... most don't. But when scale matters, I can design for it.
+I build services that are secure, easy to maintain, and well tested. I'm also pragmatic about what I provide. Not every service needs to handle billions of requests per day... most don't. But I can build for scale when it matters.
 
 ## What I build
 
@@ -20,10 +20,10 @@ I build services that are secure, easy to maintain, and well tested. I'm also pr
 
 ## How I work
 
-- **Get the data model right first.** Extra time spent making sure the data model is well designed will pay off many times over in the future.
-- **Secure by default.** Validated input, least-privilege access, and dependencies kept up to date.
-- **Build for your real load.** Whether that's a few heavy reports a day or millions of requests, I design for the actual numbers and leave room to grow.
-- **Tested and observable.** Automated tests on the parts that matter, plus logging and monitoring so problems get caught before your users notice.
+- **The right data model.** Extra time spent making sure the data model is well designed will pay off many times over in the future.
+- **Secure.** Validated input, least-privilege access, and dependencies kept up to date.
+- **Build for load.** Whether that's a few heavy reports a day or millions of requests, I design for the numbers and leave room to grow.
+- **Tested and observable.** Automated tests, plus logging and monitoring to catch problems before you or your customers do.
 
 ## Tools I use
 
