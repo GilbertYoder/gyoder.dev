@@ -22,10 +22,9 @@ const projects = defineCollection({
 	schema: z.object({
 		title: z.string(),
 		order: z.number(), // position in the Projects section
-		image: z.string(), // e.g. /cws-dashboard.png
-		imageAlt: z.string(),
-		video: z.string().optional(), // e.g. /cws-edit.webm — autoplays muted on loop
-		videoLabel: z.string().optional(), // describes the video for screen readers
+		// Shown side by side. Videos (.webm/.mp4) autoplay muted on loop;
+		// anything else renders as an image. `alt` describes it for screen readers.
+		media: z.array(z.object({ src: z.string(), alt: z.string() })).min(1),
 		tags: z.array(z.string()).default([]),
 		link: z.string().url().optional(),
 	}),

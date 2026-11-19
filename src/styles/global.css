@@ -27,7 +27,7 @@ a {
 }
 
 main {
-	max-width: 760px;
+	max-width: 880px;
 	margin: 3rem auto;
 	padding: 2.5rem;
 	background: var(--paper);

@@ -5,6 +5,7 @@ import Base from '../layouts/Base.astro';
 import me from '../assets/me.jpg';
 
 const services = (await getCollection('services')).sort((a, b) => a.data.order - b.data.order);
+const isVideo = (src: string) => /\.(webm|mp4|mov)$/i.test(src);
 const projects = await Promise.all(
 	(await getCollection('projects'))
 		.sort((a, b) => a.data.order - b.data.order)
@@ -74,22 +75,25 @@ const projects = await Promise.all(
 									{data.tags.map((t) => <li>{t}</li>)}
 								</ul>
 							)}
-							<div class="media">
-								<img src={data.image} alt={data.imageAlt} loading="lazy" decoding="async" />
-								{data.video && (
-									<video
-										src={data.video}
-										autoplay
-										muted
-										loop
-										playsinline
-										preload="metadata"
-										aria-label={data.videoLabel}
-									/>
-								)}
-							</div>
 							<div class="project-body">
 								<Content />
+							</div>
+							<div class="media">
+								{data.media.map((m) =>
+									isVideo(m.src) ? (
+										<video
+											src={m.src}
+											autoplay
+											muted
+											loop
+											playsinline
+											preload="metadata"
+											aria-label={m.alt}
+										/>
+									) : (
+										<img src={m.src} alt={m.alt} loading="lazy" decoding="async" />
+									),
+								)}
 							</div>
 							{data.link && <a href={data.link}>View project →</a>}
 						</article>
@@ -262,8 +266,7 @@ const projects = await Promise.all(
 
 	.media {
 		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-		gap: 1rem;
+		gap: 1.25rem;
 		margin-bottom: 1rem;
 	}
 
@@ -271,12 +274,9 @@ const projects = await Promise.all(
 	.media video {
 		display: block;
 		width: 100%;
-		aspect-ratio: 16 / 10;
-		object-fit: cover;
-		object-position: top;
+		height: auto;
 		border: 1.5px solid var(--ink);
 		background: var(--ink);
-		box-shadow: 4px 4px 0 var(--ink);
 	}
 
 	.project-body :global(p) {
