@@ -15,4 +15,20 @@ const services = defineCollection({
 	}),
 });
 
-export const collections = { services };
+// Each Markdown file in src/content/projects/ becomes an entry in the
+// Projects section on the home page. Media paths point into public/.
+const projects = defineCollection({
+	loader: glob({ pattern: '**/*.md', base: './src/content/projects' }),
+	schema: z.object({
+		title: z.string(),
+		order: z.number(), // position in the Projects section
+		image: z.string(), // e.g. /cws-dashboard.png
+		imageAlt: z.string(),
+		video: z.string().optional(), // e.g. /cws-edit.webm — autoplays muted on loop
+		videoLabel: z.string().optional(), // describes the video for screen readers
+		tags: z.array(z.string()).default([]),
+		link: z.string().url().optional(),
+	}),
+});
+
+export const collections = { services, projects };
