@@ -1,0 +1,99 @@
+---
+import { getCollection, render } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+
+export async function getStaticPaths() {
+	const services = await getCollection('services');
+	return services.map((service) => ({
+		params: { id: service.id },
+		props: { service },
+	}));
+}
+
+const { service } = Astro.props;
+const { Content } = await render(service);
+---
+
+<Base
+	title={`${service.data.title} in Bonners Ferry, Idaho — Gilbert Yoder`}
+	description={service.data.description}
+>
+	<article>
+		<a class="back" href="/">← Back</a>
+		<h1>{service.data.title}</h1>
+		<p class="lede">{service.data.summary}</p>
+
+		<div class="prose">
+			<Content />
+		</div>
+
+		<a class="btn" href={`mailto:yodergilbert1@gmail.com?subject=${encodeURIComponent(service.data.title)}`}>
+			Get in touch →
+		</a>
+	</article>
+</Base>
+
+<style>
+	article {
+		padding-top: 2rem;
+	}
+
+	.back {
+		display: inline-block;
+		margin-bottom: 1.5rem;
+		color: var(--muted);
+		font-size: 0.9rem;
+		text-decoration: none;
+	}
+
+	.back:hover {
+		color: var(--accent);
+	}
+
+	.lede {
+		margin: 0 0 2rem;
+		color: var(--muted);
+		font-size: 1.1rem;
+	}
+
+	.prose :global(h2) {
+		margin-top: 2rem;
+	}
+
+	.prose :global(h2)::before {
+		content: '## ';
+		color: var(--accent);
+	}
+
+	.prose :global(h3) {
+		margin: 1.5rem 0 0.5rem;
+		font-size: 1rem;
+	}
+
+	.prose :global(ul) {
+		padding-left: 1.25rem;
+	}
+
+	.prose :global(li::marker) {
+		content: '- ';
+		color: var(--accent);
+	}
+
+	.prose :global(code) {
+		padding: 0.1em 0.3em;
+		background: var(--paper-edge);
+	}
+
+	.prose :global(pre) {
+		padding: 1rem;
+		overflow-x: auto;
+		border: 1.5px solid var(--ink);
+	}
+
+	.prose :global(blockquote) {
+		margin: 1.5rem 0;
+		padding-left: 1rem;
+		border-left: 3px solid var(--accent);
+		color: var(--muted);
+	}
+</style>
