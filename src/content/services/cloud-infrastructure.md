@@ -6,24 +6,24 @@ description: Cloud infrastructure and DevOps in Bonners Ferry, Idaho — CI/CD, 
 order: 3
 ---
 
-Code isn't worth much until it's running somewhere reliable. I set up the hosting and automation that gets your software deployed, keeps it running, and keeps the bill reasonable.
+Your backend logic needs to run somewhere. I set up the hosting and automation that deploys your software, keeps it running, and keeps costs reasonable.
 
 ## What I build
 
 - CI/CD pipelines that test and deploy every change automatically
-- Containerized apps that run the same on a laptop as they do in production
+- Containerized apps that run the same in dev as they do in production
 - Cloud environments on AWS or simpler managed platforms, depending on what fits
 - Monitoring, alerting, and backups
 - Moves off aging servers or overpriced hosting
 
 ## How I work
 
-- **Make deploys boring.** Push a change, tests run, it ships. No manual steps to forget at 5pm on a Friday.
-- **Keep it as simple as possible.** Not every project needs Kubernetes. A lot of software runs great on one well-configured server or managed platform, and that's cheaper and easier to understand.
+- **Boring deploys.** Push a change, tests run, it ships. No manual steps or sketchy server commands.
+- **Keep it as simple as possible.** Kubernetes is fun, but a lot of software runs great on one well-configured server or managed platform, and that's cheaper and easier to understand.
 - **Everything in code.** Infrastructure defined in version control can be reviewed, recreated, and rolled back.
-- **Watch the costs.** Right-sized resources and no paying for capacity you don't use.
-- **Plan for things to break.** Backups that have actually been restored, health checks, and alerts that reach a real person.
+- **Resonable Costs.** Correctly-sized resources and no paying for capacity you don't use.
+- **Plan for things to break.** Backups that have been tested, health checks, and alerts.
 
 ## Tools I use
 
-Docker, GitHub Actions, Terraform, AWS, Linux, Cloudflare
+Docker, GitHub Actions, Terraform, Ansible, AWS, Linux, Cloudflare

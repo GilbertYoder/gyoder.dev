@@ -6,13 +6,13 @@ description: Backend development in Bonners Ferry, Idaho — APIs, databases, an
 order: 2
 ---
 
-A good-looking site doesn't do much without solid logic behind it. The backend is where your data lives, your business rules get enforced, and your software talks to everything else.
+A good-looking site can't do much without business logic behind it. The backend is where your data lives, your business logic operates, and your software talks to everything.
 
-I build services that are secure, easy to maintain, and sized to the job: not over-engineered for traffic you'll never see, and not so fragile they fall over when you grow.
+I build services that are secure, easy to maintain, and well tested. I'm also pragmatic about what I provide. Not every service needs to handle billions of requests per day... most don't. But when scale matters, I can design for it.
 
 ## What I build
 
-- REST and GraphQL APIs
+- REST APIs
 - Database design, migrations, and cleanup of messy data
 - Integrations with third-party services like payments, email, CRMs, and accounting tools
 - Background jobs, queues, and scheduled tasks
@@ -20,11 +20,11 @@ I build services that are secure, easy to maintain, and sized to the job: not ov
 
 ## How I work
 
-- **Get the data model right first.** Most backend problems trace back to how the data is structured. Time spent here pays off for years.
-- **Secure by default.** Validated input, least-privilege access, secrets kept out of the code, and dependencies kept up to date.
+- **Get the data model right first.** Extra time spent making sure the data model is well designed will pay off many times over in the future.
+- **Secure by default.** Validated input, least-privilege access, and dependencies kept up to date.
 - **Build for your real load.** Whether that's a few heavy reports a day or millions of requests, I design for the actual numbers and leave room to grow.
 - **Tested and observable.** Automated tests on the parts that matter, plus logging and monitoring so problems get caught before your users notice.
 
 ## Tools I use
 
-Node.js, TypeScript, Python, PostgreSQL, Redis, Docker
+Python, TypeScript, C#, PostgreSQL, MongoDB, Redis, Docker

@@ -6,23 +6,21 @@ description: AI integration in Bonners Ferry, Idaho — LLM features, chat, agen
 order: 4
 ---
 
-AI is a genuinely useful tool when it's pointed at the right problem and built carefully. I add AI features to existing products and build automations that save real time, without the unpredictable behavior that gives AI a bad name.
+Like it or not, AI is here and probably to stay. The good news is that it can be genuinely useful when applied correctly. I build AI features to automate menial or complex tasks, in practical ways that serve you without getting in your way.
 
 ## What I build
 
 - Chat assistants that answer questions using your own documents and data
-- Automation for tedious work: sorting email, pulling data out of documents, drafting replies, summarizing
-- Agents that take actions in your systems, with clear limits on what they're allowed to do
-- Search that understands what people mean, not just the exact words they type
+- Automation for tedious work: sorting or cleaning data, pulling information out of documents, drafting replies, summarizing
+- Agents that operate in your systems, with limits on what they're allowed to do
 
 ## How I work
 
-- **Start with the problem, not the model.** Sometimes a simple script or a better form is the right answer. I'll tell you when AI isn't worth it.
-- **Constrain and validate.** Structured output, tight permissions, and checks on everything the model produces before it touches real data.
-- **Measure it.** I test against real examples so you know how well it works before launch and can tell if it slips later.
-- **Keep a human in the loop where it matters.** Anything with real consequences gets a review step.
-- **Keep costs predictable.** The right model for each task, caching, and usage limits.
+- **Start with the problem, not the solution.** AI isn't always the answer. Sometimes a simple script or a better form is the right answer.
+- **Constrain and validate.** Structured output, tight permissions, and checks on model output.
+- **Keep a human in the loop where it matters.** Anything with real consequences gets a human in the loop.
+- **Keep costs predictable.** AI can be spendy. You want the right model for each task, caching, and usage limits.
 
 ## Tools I use
 
-Claude and OpenAI APIs, TypeScript, Python, PostgreSQL with pgvector
+Claude and OpenAI APIs
