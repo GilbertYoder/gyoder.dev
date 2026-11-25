@@ -7,6 +7,7 @@
 	--rule: #cfc4aa;
 	--dot: rgba(38, 35, 30, 0.07);
 	--shadow: var(--ink);
+	--line: var(--ink);
 	color-scheme: light;
 }
 
@@ -19,6 +20,7 @@
 	--rule: #4a443a;
 	--dot: rgba(235, 227, 208, 0.06);
 	--shadow: #0a0908;
+	--line: #0a0908;
 	color-scheme: dark;
 }
 
@@ -37,6 +39,11 @@ body {
 	line-height: 1.6;
 }
 
+:root[data-theme='dark'] body {
+	background-color: #000;
+	background-image: none;
+}
+
 a {
 	color: var(--accent);
 }
@@ -46,7 +53,7 @@ main {
 	margin: 3rem auto;
 	padding: 2.5rem;
 	background: var(--paper);
-	border: 2px solid var(--ink);
+	border: 2px solid var(--line);
 	box-shadow: 8px 8px 0 var(--shadow);
 }
 
@@ -115,7 +122,7 @@ h2 {
 	display: inline-block;
 	margin-top: 1.25rem;
 	padding: 0.6rem 1.1rem;
-	border: 2px solid var(--ink);
+	border: 2px solid var(--line);
 	background: var(--accent);
 	color: var(--paper);
 	font-weight: 700;
