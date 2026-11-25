@@ -1,5 +1,6 @@
 ---
 title: Tembly
+summary: Quote management for truss shops, with AI-powered email intake.
 order: 0
 link: https://tembly.app
 media:

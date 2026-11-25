@@ -1,16 +1,12 @@
 ---
 import { Image } from 'astro:assets';
-import { getCollection, render } from 'astro:content';
+import { getCollection } from 'astro:content';
 import Base from '../layouts/Base.astro';
 import me from '../assets/me.jpg';
 
 const services = (await getCollection('services')).sort((a, b) => a.data.order - b.data.order);
 const isVideo = (src: string) => /\.(webm|mp4|mov)$/i.test(src);
-const projects = await Promise.all(
-	(await getCollection('projects'))
-		.sort((a, b) => a.data.order - b.data.order)
-		.map(async (p) => ({ ...p, Content: (await render(p)).Content })),
-);
+const projects = (await getCollection('projects')).sort((a, b) => a.data.order - b.data.order);
 ---
 
 <Base
@@ -74,51 +70,40 @@ const projects = await Promise.all(
 		projects.length > 0 && (
 			<section id="projects">
 				<h2><span class="hash">##</span> Projects</h2>
-				<div class="projects">
-					{projects.map(({ data, Content }) => (
-						<article class="project">
-							<h3>{data.title}</h3>
-							{data.tags.length > 0 && (
-								<ul class="tags">
-									{data.tags.map((t) => <li>{t}</li>)}
-								</ul>
-							)}
-							<div class="project-body">
-								<Content />
-							</div>
-							<div class="media">
-								{data.media.map((m) =>
-									isVideo(m.src) ? (
-										<video
-											src={m.src}
-											autoplay
-											muted
-											loop
-											playsinline
-											preload="metadata"
-											aria-label={m.alt}
-										/>
-									) : (
-										<img src={m.src} alt={m.alt} loading="lazy" decoding="async" />
-									),
-								)}
-							</div>
-							{data.link && <a href={data.link}>View project →</a>}
-						</article>
-					))}
-				</div>
+				<ul class="projects">
+					{projects.map(({ id, data }) => {
+						const thumb = data.thumbnail ?? data.media[0].src;
+						return (
+							<li>
+								<a href={`/projects/${id}/`}>
+									<div class="thumb">
+										{isVideo(thumb) ? (
+											<video src={thumb} autoplay muted loop playsinline preload="metadata" aria-hidden="true" />
+										) : (
+											<img src={thumb} alt="" loading="lazy" decoding="async" />
+										)}
+									</div>
+									<div class="card-body">
+										<h3>{data.title}</h3>
+										<p>{data.summary}</p>
+										<span class="more">read more →</span>
+									</div>
+								</a>
+							</li>
+						);
+					})}
+				</ul>
 			</section>
 		)
 	}
 </Base>
 
 <script>
-	// Respect reduced-motion: stop autoplaying videos and show controls instead.
+	// Respect reduced-motion: keep card thumbnails still.
 	if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-		for (const v of document.querySelectorAll<HTMLVideoElement>('.project video')) {
+		for (const v of document.querySelectorAll<HTMLVideoElement>('.thumb video')) {
 			v.pause();
 			v.removeAttribute('autoplay');
-			v.controls = true;
 		}
 	}
 </script>
@@ -192,7 +177,7 @@ const projects = await Promise.all(
 	.skills a:hover,
 	.skills a:focus-visible {
 		transform: translate(-2px, -2px);
-		box-shadow: 4px 4px 0 var(--ink);
+		box-shadow: 4px 4px 0 var(--shadow);
 		outline: none;
 	}
 
@@ -276,49 +261,65 @@ const projects = await Promise.all(
 	}
 
 	.projects {
-		display: grid;
-		gap: 2.5rem;
-	}
-
-	.project h3 {
-		margin: 0 0 0.5rem;
-		font-size: 1.05rem;
-	}
-
-	.tags {
-		display: flex;
-		flex-wrap: wrap;
-		gap: 0.4rem;
-		margin: 0 0 0.75rem;
-		padding: 0;
 		list-style: none;
-	}
-
-	.tags li {
-		padding: 0.05rem 0.45rem;
-		border: 1px solid var(--rule);
-		color: var(--muted);
-		font-size: 0.75rem;
-	}
-
-	.media {
+		margin: 0;
+		padding: 0;
 		display: grid;
-		gap: 1.25rem;
-		margin-bottom: 1rem;
+		gap: 1rem;
+		grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
 	}
 
-	.media img,
-	.media video {
-		display: block;
-		width: 100%;
-		height: auto;
+	.projects a {
+		display: flex;
+		flex-direction: column;
+		height: 100%;
 		border: 1.5px solid var(--ink);
+		background: var(--paper-edge);
+		color: inherit;
+		text-decoration: none;
+		transition: transform 0.15s, box-shadow 0.15s;
+	}
+
+	.projects a:hover,
+	.projects a:focus-visible {
+		transform: translate(-2px, -2px);
+		box-shadow: 4px 4px 0 var(--shadow);
+		outline: none;
+	}
+
+	.thumb {
+		aspect-ratio: 16 / 10;
+		overflow: hidden;
+		border-bottom: 1.5px solid var(--ink);
 		background: var(--ink);
 	}
 
-	.project-body :global(p) {
+	.thumb img,
+	.thumb video {
+		display: block;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		object-position: top left;
+	}
+
+	.card-body {
+		display: flex;
+		flex: 1;
+		flex-direction: column;
+		padding: 1rem;
+	}
+
+	.card-body h3 {
+		margin: 0 0 0.4rem;
+		font-size: 1rem;
+		line-height: 1.3;
+	}
+
+	.card-body p {
 		margin: 0 0 0.75rem;
-		font-size: 0.9rem;
+		color: var(--muted);
+		font-size: 0.85rem;
 	}
 
 	@media (max-width: 680px) {
@@ -329,7 +330,8 @@ const projects = await Promise.all(
 			gap: 2rem;
 		}
 
-		.skills {
+		.skills,
+		.projects {
 			grid-template-columns: 1fr;
 		}
 	}

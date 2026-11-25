@@ -26,4 +26,4 @@ Your backend logic needs to run somewhere. I set up the hosting and automation t
 
 ## Tools I use
 
-Docker, GitHub Actions, Terraform, Ansible, AWS, Linux, Cloudflare
+Docker, AWS, GitHub Actions, Terraform, Ansible, Linux, Cloudflare

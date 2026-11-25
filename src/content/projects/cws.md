@@ -1,5 +1,6 @@
 ---
 title: Weather Station Dashboard
+summary: Customizable realtime and historical weather dashboards.
 order: 1
 media:
   - src: /cws-history.webm

@@ -5,6 +5,21 @@
 	--muted: #6f675a;
 	--accent: #b4452b;
 	--rule: #cfc4aa;
+	--dot: rgba(38, 35, 30, 0.07);
+	--shadow: var(--ink);
+	color-scheme: light;
+}
+
+:root[data-theme='dark'] {
+	--paper: #1d1b17;
+	--paper-edge: #29261f;
+	--ink: #ebe3d0;
+	--muted: #a59c8a;
+	--accent: #e2734f;
+	--rule: #4a443a;
+	--dot: rgba(235, 227, 208, 0.06);
+	--shadow: #0a0908;
+	color-scheme: dark;
 }
 
 * {
@@ -14,7 +29,7 @@
 body {
 	margin: 0;
 	background-color: var(--paper);
-	background-image: radial-gradient(circle at 1px 1px, rgba(38, 35, 30, 0.07) 1px, transparent 0);
+	background-image: radial-gradient(circle at 1px 1px, var(--dot) 1px, transparent 0);
 	background-size: 22px 22px;
 	color: var(--ink);
 	font-family: ui-monospace, 'SF Mono', 'JetBrains Mono', Menlo, Consolas, monospace;
@@ -27,12 +42,12 @@ a {
 }
 
 main {
-	max-width: 880px;
+	max-width: 1120px;
 	margin: 3rem auto;
 	padding: 2.5rem;
 	background: var(--paper);
 	border: 2px solid var(--ink);
-	box-shadow: 8px 8px 0 var(--ink);
+	box-shadow: 8px 8px 0 var(--shadow);
 }
 
 .top {
@@ -43,6 +58,28 @@ main {
 	border-bottom: 1px dashed var(--rule);
 	color: var(--muted);
 	font-size: 0.85rem;
+}
+
+.top-right {
+	display: flex;
+	align-items: center;
+	gap: 1rem;
+}
+
+.theme-toggle {
+	padding: 0.1rem 0.5rem;
+	border: 1px solid var(--rule);
+	background: none;
+	color: inherit;
+	font: inherit;
+	cursor: pointer;
+}
+
+.theme-toggle:hover,
+.theme-toggle:focus-visible {
+	border-color: var(--accent);
+	color: var(--accent);
+	outline: none;
 }
 
 .top a {
@@ -83,13 +120,13 @@ h2 {
 	color: var(--paper);
 	font-weight: 700;
 	text-decoration: none;
-	box-shadow: 4px 4px 0 var(--ink);
+	box-shadow: 4px 4px 0 var(--shadow);
 	transition: transform 0.12s, box-shadow 0.12s;
 }
 
 .btn:hover {
 	transform: translate(2px, 2px);
-	box-shadow: 2px 2px 0 var(--ink);
+	box-shadow: 2px 2px 0 var(--shadow);
 }
 
 .btn:focus-visible {
@@ -113,6 +150,6 @@ footer p {
 	main {
 		margin: 1rem;
 		padding: 1.25rem;
-		box-shadow: 5px 5px 0 var(--ink);
+		box-shadow: 5px 5px 0 var(--shadow);
 	}
 }

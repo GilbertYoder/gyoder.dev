@@ -18,12 +18,21 @@ const { title, description } = Astro.props;
 		<meta name="generator" content={Astro.generator} />
 		<meta name="description" content={description} />
 		<title>{title}</title>
+		<script is:inline>
+			// Set the theme before first paint: saved choice, else the OS setting.
+			document.documentElement.dataset.theme =
+				localStorage.getItem('theme') ??
+				(matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+		</script>
 	</head>
 	<body>
 		<main>
 			<header class="top">
 				<a href="/">gyoder.dev</a>
-				<span>Bonners Ferry, ID</span>
+				<div class="top-right">
+					<span>Bonners Ferry, ID</span>
+					<button class="theme-toggle" type="button" aria-label="Toggle dark theme"></button>
+				</div>
 			</header>
 
 			<slot />
@@ -32,5 +41,20 @@ const { title, description } = Astro.props;
 				<p>© {new Date().getFullYear()} Gilbert Yoder · Bonners Ferry, Idaho</p>
 			</footer>
 		</main>
+		<script>
+			const btn = document.querySelector<HTMLButtonElement>('.theme-toggle')!;
+			const root = document.documentElement;
+			const sync = () => {
+				const dark = root.dataset.theme === 'dark';
+				btn.textContent = dark ? '☀ light' : '☾ dark';
+				btn.setAttribute('aria-pressed', String(dark));
+			};
+			sync();
+			btn.addEventListener('click', () => {
+				root.dataset.theme = root.dataset.theme === 'dark' ? 'light' : 'dark';
+				localStorage.setItem('theme', root.dataset.theme);
+				sync();
+			});
+		</script>
 	</body>
 </html>
