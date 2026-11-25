@@ -1,7 +1,7 @@
 ---
 title: AI Integration
 cmd: ai
-summary: Practical AI features and automation, built with guardrails.
+summary: Practical AI integration and automation to supplement your workflows.
 description: AI integration in Bonners Ferry, Idaho — LLM features, chat, agents, and automation added to your software by Gilbert Yoder.
 order: 4
 ---
