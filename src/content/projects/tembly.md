@@ -10,4 +10,4 @@ media:
 tags: []
 ---
 
-A quote management app for truss shops. Customers submit jobs through a friendly request form that asks for exactly what designers need. An **integrated AI pipeline** lets shops forward emails to a dedicated Tembly address and have them automatically turned into quote requests. Requests land in a shared Quote Rack where designers claim them, with each shop's data isolated in a multi-tenant architecture.
+A quote management app for truss shops. Customers submit jobs through a friendly request form that asks for exactly what designers need. An **integrated AI pipeline** lets shops forward emails to a dedicated Tembly address to have them automatically turned into quote requests. Requests land in a shared Quote Rack where designers claim them, with each shop's data isolated in a multi-tenant architecture.
