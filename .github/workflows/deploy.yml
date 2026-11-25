@@ -15,12 +15,12 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  deploy:
+  # Build and deploy are separate jobs (the layout Astro's docs recommend).
+  # Deploying in the same job as the upload fails intermittently: deploy-pages
+  # queries for the artifact a fraction of a second after it's finalized and
+  # GitHub's API doesn't list it yet ("No artifacts named github-pages").
+  build:
     runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -28,6 +28,13 @@ jobs:
       - name: Build Astro
         uses: withastro/action@v5
 
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
