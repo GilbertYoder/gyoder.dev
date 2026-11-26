@@ -81,14 +81,6 @@ const projects = (await getCollection('projects')).sort((a, b) => a.data.order -
 				</a>
 			</li>
 		</ul>
-
-		<aside class="consult">
-			<h3>Need technical consultation?</h3>
-			<p>
-                I also offer technical consulting. Architecture reviews, performance problems, project planning, or just a second opinion.
-			</p>
-			<a href="mailto:yodergilbert1@gmail.com?subject=Technical%20consulting">Get in touch →</a>
-		</aside>
 	</section>
 
 	{
@@ -270,35 +262,6 @@ const projects = (await getCollection('projects')).sort((a, b) => a.data.order -
 		margin-top: auto;
 		color: var(--accent);
 		font-size: 0.8rem;
-	}
-
-	.consult {
-		margin-top: 1.5rem;
-		padding: 1.25rem;
-		border: 1.5px dashed var(--line);
-	}
-
-	.consult h3 {
-		margin: 0 0 0.5rem;
-		font-size: 1rem;
-		text-transform: uppercase;
-		letter-spacing: 0.06em;
-	}
-
-	.consult p {
-		margin: 0 0 0.75rem;
-		color: var(--muted);
-		font-size: 0.9rem;
-	}
-
-	.consult a {
-		font-size: 0.9rem;
-		font-weight: 700;
-		text-decoration: none;
-	}
-
-	.consult a:hover {
-		text-decoration: underline;
 	}
 
 	.jump {
