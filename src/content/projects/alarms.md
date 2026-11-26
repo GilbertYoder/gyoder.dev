@@ -11,4 +11,8 @@ media:
 tags: []
 ---
 
-A configurable alarm system that monitors data as it's ingested. Customers define their own alarm conditions, and every incoming reading is evaluated against them in real time. When a condition is met, an alarm opens and notifications go out by **email and push**. Reminders follow while the alarm stays active, and a final notification is sent when it clears, so the right people know when a problem starts, persists, and resolves.
+This is a configurable alarm system that monitors weather data as it's ingested.
+
+Customers define their own alarm conditions, and every incoming reading is evaluated against these conditions in real time. When a condition is met, an alarm opens and notifications go out by **email** and to mobile users via **push**. Reminders follow while the alarm stays active, and a final notification is sent when it clears.
+
+I would place this project in the moderate+ complexity category. A number of factors contributed to its complexity. However, after a few iterations, the final product is simple, for what it is, and works well.
