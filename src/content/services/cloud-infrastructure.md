@@ -6,22 +6,26 @@ description: Cloud infrastructure and DevOps in Bonners Ferry, Idaho — CI/CD, 
 order: 3
 ---
 
-Your backend logic needs to run somewhere. I set up the hosting and automation that deploys your software, keeps it running, and keeps costs reasonable.
+Infrastructure is where your backend logic runs. Infrastructure includes databases, servers, load balancers, CDNs, etc. I set up the infrastructure to run your software while keeping costs low and predictable.
+
+Typically infra can consist of a managed workflow where all infrasture complexity is offloaded to the provider. This includes solutions like DigitalOcean App Platform and DigitalOcean Managed Databases. When App Platform isn't the right fit, individual virtual servers can be spun up to run the workload. Other times the backend can be entirely serverless, running on Functions (or Lambda), Spaces, etc.
+
+A simple cloud provider like DigitalOcean is typically more than enough for the vast majority of applications. AWS only makes sense for specific scenarios, due to increased complexity and often higher costs.
 
 ## What I build
 
-- Continuous integration and delivery pipelines that test and deploy changes automatically
 - Containerized apps that run the same in production as they do in dev
-- Cloud environments on AWS or simpler managed platforms, depending on requirements
+- Cloud environments on DigitalOcean, or AWS if it makes sense
 - Monitoring, alerting, and backups
 - Moves off aging servers or overpriced hosting
+- Continuous integration and delivery pipelines that test and deploy changes automatically
 
 ## How I work
 
 - **Boring deploys.** Push a change, tests run, it ships. This eliminates manual steps and sketchy server commands.
-- **Simple as possible.** Kubernetes is fun, but a lot of software runs great on one well-configured server or managed platform, and that's cheaper and easier to understand.
+- **Simple as possible.** Kubernetes is fun, but most software runs great on one well-configured server or a managed platform. This is cheaper and reduces complexity.
 - **Infrastructure as code.** Infrastructure defined in version control can be reviewed, recreated, and rolled back.
-- **Predictable costs.** Correctly-sized resources and only the required capacity.
+- **Low and predictable costs.** Correctly-sized resources and only the required capacity.
 - **Plan for things to break.** Tested backups, health checks, and alerts.
 
 ## Tools I use

@@ -1,12 +1,14 @@
 ---
-title: AI Integration
+title: ✨ AI Integration
 cmd: ai
 summary: Practical AI integration and automation to supplement your workflows.
 description: AI integration in Bonners Ferry, Idaho — LLM features, chat, agents, and automation added to your software by Gilbert Yoder.
 order: 4
 ---
 
-Like it or not, AI is here and probably to stay. The good news is that it can be genuinely useful when applied correctly. I build AI features to automate menial or complex tasks, in practical ways that serve you without getting in your way.
+Like it or not, AI is here and probably to stay. The good news is that it can be genuinely useful when applied correctly.
+
+I build AI features to automate menial or complex tasks, in practical ways that serve you without getting in your way.
 
 ## What I build
 
@@ -16,10 +18,10 @@ Like it or not, AI is here and probably to stay. The good news is that it can be
 
 ## How I work
 
-- **Start with the problem, not the solution.** AI isn't always the answer. Sometimes a simple script or a better form is the right answer.
-- **Constrain and validate.** Structured output, tight permissions, and checks on model output.
-- **Keep a human in the loop where it matters.** Anything with real consequences gets a human in the loop.
-- **Keep costs predictable.** AI can be spendy. You want the right model for each task, caching, and usage limits.
+- **Start with the problem.** AI isn't always the answer. Sometimes a simple script or a better form solves the problem for cheaper and simpler.
+- **Constrain and validate.** Structured and validated model output.
+- **A human in the loop.** Anything with real consequences needs a human in the loop.
+- **Predictable costs.** AI can be spendy. You want the right model for each task and proper implementation.
 
 ## Tools I use
 
