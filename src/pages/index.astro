@@ -73,6 +73,13 @@ const projects = (await getCollection('projects')).sort((a, b) => a.data.order -
 					</li>
 				))
 			}
+			<li class="cta">
+				<a href="mailto:yodergilbert1@gmail.com?subject=Project%20idea">
+					<h3>Have something different in mind?</h3>
+					<p>Not every problem fits neatly into a category.</p>
+					<span class="more">Let's talk about it →</span>
+				</a>
+			</li>
 		</ul>
 
 		<aside class="consult">
@@ -215,6 +222,31 @@ const projects = (await getCollection('projects')).sort((a, b) => a.data.order -
 
 	.skills a:hover :global(.service-icon) {
 		color: var(--accent);
+	}
+
+	/* Closing call-to-action tile: quieter than the service cards. */
+	.skills .cta a {
+		justify-content: center;
+		align-items: center;
+		text-align: center;
+		border: 1.5px dashed var(--rule);
+		background: none;
+	}
+
+	.skills .cta a:hover,
+	.skills .cta a:focus-visible {
+		transform: none;
+		box-shadow: none;
+		border-color: var(--accent);
+	}
+
+	.skills .cta h3 {
+		color: var(--muted);
+	}
+
+	.skills .cta .more {
+		margin-top: 0;
+		font-weight: 700;
 	}
 
 	.skills code {
