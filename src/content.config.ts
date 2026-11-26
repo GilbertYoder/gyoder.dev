@@ -12,7 +12,7 @@ const services = defineCollection({
 		summary: z.string(), // one-liner on the card and under the page title
 		description: z.string(), // search-result snippet for the page
 		order: z.number(), // card order on the home page
-		icon: z.enum(['frontend', 'backend', 'cloud', 'ai']), // see src/components/ServiceIcon.astro
+		icon: z.enum(['frontend', 'backend', 'cloud', 'ai', 'hardware']), // see src/components/ServiceIcon.astro
 	}),
 });
 

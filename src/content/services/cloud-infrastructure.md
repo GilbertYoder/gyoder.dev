@@ -3,7 +3,7 @@ title: Cloud Infrastructure
 cmd: infra
 summary: Secure, reliable, and durable deployments with predictable costs.
 description: Cloud infrastructure and DevOps in Bonners Ferry, Idaho — CI/CD, containers, and hosting by Gilbert Yoder.
-order: 3
+order: 2
 icon: cloud
 ---
 
