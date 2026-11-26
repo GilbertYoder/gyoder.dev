@@ -4,6 +4,7 @@ cmd: infra
 summary: Secure, reliable, and durable deployments with predictable costs.
 description: Cloud infrastructure and DevOps in Bonners Ferry, Idaho — CI/CD, containers, and hosting by Gilbert Yoder.
 order: 3
+icon: cloud
 ---
 
 Infrastructure is where your backend logic runs. Infrastructure includes databases, servers, load balancers, CDNs, etc. I set up the infrastructure to run your software while keeping costs low and predictable.

@@ -153,6 +153,14 @@ footer p {
 	margin: 0;
 }
 
+footer a {
+	color: inherit;
+}
+
+footer a:hover {
+	color: var(--accent);
+}
+
 @media (max-width: 680px) {
 	main {
 		margin: 1rem;

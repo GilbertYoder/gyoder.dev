@@ -4,6 +4,7 @@ cmd: backend
 summary: APIs, databases, and integrations that are secure, scalable, and maintainable.
 description: Backend development in Bonners Ferry, Idaho — APIs, databases, and reliable services by Gilbert Yoder.
 order: 2
+icon: backend
 ---
 
 The application backend is where your data lives, your business logic operates, and your software talks to other services.

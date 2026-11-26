@@ -4,6 +4,7 @@ cmd: frontend
 summary: Fast, accessible websites and web apps that are easy to use and simple to maintain.
 description: Frontend web development in Bonners Ferry, Idaho — fast, accessible websites and web apps by Gilbert Yoder.
 order: 1
+icon: frontend
 ---
 
 The frontend is what users see. Slow, confusing, or broken user interfaces damage retention, frustruate users, and outweigh any amount of time put into backend logic.

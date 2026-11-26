@@ -1,9 +1,10 @@
 ---
-title: ✨ AI Integration
+title: AI Integration
 cmd: ai
 summary: Practical AI integration and automation to supplement your workflows.
 description: AI integration in Bonners Ferry, Idaho — LLM features, chat, agents, and automation added to your software by Gilbert Yoder.
 order: 4
+icon: ai
 ---
 
 Like it or not, AI is here and probably to stay. The good news is that it can be genuinely useful when applied correctly.
