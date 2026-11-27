@@ -6,17 +6,16 @@ order: 3
 icon: hardware
 ---
 
-A lot of valuable data can be collected from machines, sensors, and equipment, and often never gets integrated into systems where it can be most useful.
+Machines, sensors, and equipment produce a lot of useful information, and most of it never makes it into the software where people could use it.
 
-I connect that hardware to your local or cloud-based software so you can monitor what's happening, get alerted when something changes, or send commands back to equipment through its existing interfaces. This integration supplements your on-site processes by giving them first-class integration into your other work-flows.
+I connect that hardware to your local or cloud-based software. You can see what's happening, get alerted when something changes, or send commands back to equipment through its existing interfaces.
 
 ## What I build
 
-- Data collection from sensors and existing equipment
-- Real-time monitoring dashboards
-- Alerts and notifications when readings or equipment status change
-- Integrations between on-site equipment and cloud services
-- Local equipment communication using protocols like Modbus, including reading data and sending commands
+- Machine monitoring: count cycles, track run time and downtime, and send a reminder when maintenance is due
+- Sensor readings like temperature or pressure on a live dashboard, with a text or email when something goes out of range
+- Connections between on-site equipment and cloud services, so production data ends up in the software you already use
+- Communication with equipment over protocols like Modbus, both reading data and sending commands
 
 ## How I work
 

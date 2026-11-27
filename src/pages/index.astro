@@ -6,11 +6,31 @@ import ServiceIcon from '../components/ServiceIcon.astro';
 import me from '../assets/me.jpg';
 
 const services = (await getCollection('services')).sort((a, b) => a.data.order - b.data.order);
+// Example systems that combine the services above. These are things I can build,
+// not past client projects, so keep the wording hypothetical.
+const examples = [
+	{
+		title: 'Equipment monitoring & maintenance alerts',
+		text: "Connect sensors or existing machines to software that tracks cycles, run time, or temperatures. For example, count how many times a press runs and notify someone when it's due for maintenance.",
+	},
+	{
+		title: 'Custom business software',
+		text: "An application built around how your business actually works. Job tracking, inventory, scheduling, a customer portal, or a replacement for a spreadsheet that's gotten out of hand.",
+	},
+	{
+		title: 'Workflow automation & integrations',
+		text: 'Get the tools you already use talking to each other. No more typing the same data into two systems. Records stay in sync, and details from incoming emails and documents get pulled in automatically.',
+	},
+	{
+		title: 'Replacing aging software',
+		text: "An old Access database, desktop program, or internal tool nobody wants to maintain anymore. I can rebuild it as a web app your team can use from anywhere, and bring the existing data along.",
+	},
+];
 ---
 
 <Base
 	title="Gilbert Yoder — Software Developer"
-	description="Gilbert Yoder — software developer in Bonners Ferry, Idaho. Frontend, backend, cloud infrastructure, and AI integration."
+	description="Gilbert Yoder — software developer in Bonners Ferry, Idaho. Custom software that connects systems, equipment, and workflows: backend, cloud infrastructure, hardware and IoT, AI, and frontend."
 >
 	<section class="hero">
 		<figure class="photo">
@@ -29,7 +49,8 @@ const services = (await getCollection('services')).sort((a, b) => a.data.order -
 		<div class="intro">
 			<h1>Gilbert Yoder</h1>
 			<p class="lede">
-            Software developer delivering and maintaining custom user interfaces, services, infrastructure, AI solutions, and hardware & IoT integrations.
+				Software developer building custom software that connects your systems, equipment, and day-to-day
+				work. From the app your team uses, to the server it runs on, to the machines it talks to.
 			</p>
 			<p class="loc">📍 Bonners Ferry, Idaho</p>
 			<a class="btn" href="mailto:yodergilbert1@gmail.com?subject=Hello%20Gilbert">
@@ -77,6 +98,20 @@ const services = (await getCollection('services')).sort((a, b) => a.data.order -
 				</a>
 			</li>
 		</ul>
+	</section>
+
+	<section class="build">
+		<h2><span class="hash">##</span> Practical applications</h2>
+		<div class="examples">
+			{
+				examples.map((e) => (
+					<article>
+						<h3>{e.title}</h3>
+						<p>{e.text}</p>
+					</article>
+				))
+			}
+		</div>
 	</section>
 </Base>
 
@@ -247,6 +282,32 @@ const services = (await getCollection('services')).sort((a, b) => a.data.order -
 		height: 1.1em;
 	}
 
+	.build {
+		margin-top: 2.5rem;
+	}
+
+	.examples {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		gap: 1.5rem 2rem;
+	}
+
+	.examples article {
+		padding-top: 0.85rem;
+		border-top: 2px solid var(--line);
+	}
+
+	.examples h3 {
+		margin: 0 0 0.4rem;
+		font-size: 1rem;
+		line-height: 1.3;
+	}
+
+	.examples p {
+		margin: 0;
+		font-size: 0.85rem;
+	}
+
 	@media (max-width: 680px) {
 		.hero {
 			grid-template-columns: 1fr;
@@ -259,7 +320,8 @@ const services = (await getCollection('services')).sort((a, b) => a.data.order -
 			justify-content: center;
 		}
 
-		.skills {
+		.skills,
+		.examples {
 			grid-template-columns: 1fr;
 		}
 	}

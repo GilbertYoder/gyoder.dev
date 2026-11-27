@@ -6,9 +6,9 @@ order: 2
 icon: cloud
 ---
 
-Infrastructure is where your backend logic runs. Infrastructure includes databases, servers, load balancers, CDNs, etc. I set up the infrastructure to run your software while keeping costs low and predictable.
+Infrastructure is where your software runs: databases, servers, load balancers, CDNs, and so on. I set it up so your software stays online while keeping costs low and predictable.
 
-Typically infra can consist of a managed workflow where all infrasture complexity is offloaded to the provider. This includes solutions like DigitalOcean App Platform and DigitalOcean Managed Databases. When App Platform isn't the right fit, individual virtual servers can be spun up to run the workload. Other times the backend can be entirely serverless, running on Functions (or Lambda), Spaces, etc.
+Often the simplest option is a managed platform, where the provider handles most of the complexity. DigitalOcean App Platform and Managed Databases are good examples. When that isn't the right fit, the workload can run on individual virtual servers. Other times the backend can be entirely serverless, running on Functions (or Lambda), Spaces, and similar services.
 
 A simple cloud provider like DigitalOcean is typically more than enough for the vast majority of applications. AWS only makes sense for specific scenarios, due to increased complexity and often higher costs.
 
@@ -30,4 +30,4 @@ A simple cloud provider like DigitalOcean is typically more than enough for the 
 
 ## Tools I use
 
-Docker, AWS, Terraform, Ansible, Linux, Cloudflare
+DigitalOcean, Docker, AWS, Terraform, Ansible, Linux, Cloudflare

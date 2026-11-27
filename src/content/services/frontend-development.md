@@ -6,7 +6,7 @@ order: 5
 icon: frontend
 ---
 
-Powerful software needs an interface that makes complex tasks straightforward. Managing business operations, monitoring live data, working through complicated processes-the frontend should support each of these without fuss and being in the way.
+Powerful software needs an interface that makes complex tasks straightforward. Whether someone is managing day-to-day operations, watching live data, or working through a complicated process, the frontend should help them do it without getting in the way.
 
 I build application interfaces that connect people to the systems and data they work with. My focus is on functionality, usability, and maintainability.
 
@@ -14,7 +14,7 @@ I build application interfaces that connect people to the systems and data they 
 
 * Dashboards and monitoring interfaces for operational data, metrics, and real-time activity
 * Internal tools and admin panels for managing business processes
-* Complex workflows involving forms, multiple step workflows, and validation
+* Multi-step forms and workflows with validation
 * Data-heavy interfaces with filtering, sorting, searching, and interactive tables
 * Application modernization to replace outdated or difficult-to-maintain interfaces
 

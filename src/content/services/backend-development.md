@@ -10,6 +10,8 @@ The application backend is where your data lives, your business logic operates, 
 
 I build services that are secure, easy to maintain, and well tested. I'm pragmatic about what I provide. Not every service needs to handle billions of requests per day... most don't. But I can build for scale if your application requires it.
 
+For example: an order form that also updates your accounting software, a nightly job that emails a report, or an API a mobile app connects to.
+
 ## What I build
 
 - REST APIs
@@ -22,7 +24,7 @@ I build services that are secure, easy to maintain, and well tested. I'm pragmat
 
 - **The right data model.** Extra time spent making sure the data model is well designed will pay off many times over in the future. The alternative is unnecessary rewrites 2 years in.
 - **Secure.** Security matters more than ever in the AI era. Validated input, least-privilege access, and dependencies kept up to date.
-- **Cloud native.** Cloud native software significantly reduces operational complexity, downtime, maintainability, and improves security. <a href="https://aws.amazon.com/what-is/cloud-native/" target="_blank">Read more</a>
+- **Cloud native.** Building on managed cloud services means less to operate, less downtime, and better security without extra effort. <a href="https://aws.amazon.com/what-is/cloud-native/" target="_blank">Read more</a>
 - **Build for the required load.** Whether that's a few heavy reports a day or millions of requests, I design for the current numbers while leaving room for future growth.
 - **Tested and observable.** Automated tests catch bugs before your users do. Logging and monitoring mean visibility into existing issues and faster patch times.
 

@@ -12,8 +12,8 @@ I build AI features to automate menial or complex tasks, in practical ways that 
 
 ## What I build
 
-- Chat assistants that answer questions using your own documents and data
-- Automation for tedious work: sorting or cleaning data, pulling information out of documents, drafting replies, summarizing
+- Chat assistants that answer questions from your own documents, like manuals or policies
+- Automation for tedious work: sorting or cleaning data, drafting replies, summarizing, or turning emailed orders and invoices into draft entries for someone to approve
 - Agents that operate in your systems, with limits on what they're allowed to do
 
 ## How I work
