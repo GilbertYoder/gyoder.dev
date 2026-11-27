@@ -9,7 +9,7 @@ icon: hardware
 
 A lot of valuable data can be collected from machines, sensors, and equipment, and often never gets integrated into systems where it can be most useful.
 
-I connect that hardware to your cloud infrastructure so you can monitor what's happening, get alerted when something changes, or send commands back to equipment through its existing interfaces. This integration supplements your on-site processes by giving them first-class integration into your other work-flows.
+I connect that hardware to your local or cloud-based software so you can monitor what's happening, get alerted when something changes, or send commands back to equipment through its existing interfaces. This integration supplements your on-site processes by giving them first-class integration into your other work-flows.
 
 ## What I build
 
