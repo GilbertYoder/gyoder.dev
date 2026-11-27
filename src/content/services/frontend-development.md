@@ -1,6 +1,5 @@
 ---
 title: Frontend Development
-cmd: frontend
 summary: Dashboards, internal tools, and interfaces built around workflows
 description: Frontend web development in Bonners Ferry, Idaho — fast, accessible web apps, dashboards, and websites by Gilbert Yoder.
 order: 5

@@ -8,7 +8,6 @@ const services = defineCollection({
 	loader: glob({ pattern: '**/*.md', base: './src/content/services' }),
 	schema: z.object({
 		title: z.string(),
-		cmd: z.string(), // shown as ./<cmd> on the card
 		summary: z.string(), // one-liner on the card and under the page title
 		description: z.string(), // search-result snippet for the page
 		order: z.number(), // card order on the home page

@@ -1,6 +1,5 @@
 ---
 title: Hardware & IoT Integration
-cmd: hardware
 summary: Connecting sensors, equipment, and existing hardware to software for real-time monitoring, alerts, and data integration.
 description: Hardware and IoT integration in Bonners Ferry, Idaho — connecting sensors and existing equipment to software for real-time monitoring, alerts, and data integration, by Gilbert Yoder.
 order: 3

@@ -59,11 +59,10 @@ const services = (await getCollection('services')).sort((a, b) => a.data.order -
 				services.map((s) => (
 					<li>
 						<a href={`/services/${s.id}/`}>
-							<div class="card-top">
-								<code>./{s.data.cmd}</code>
+							<div class="card-head">
+								<h3>{s.data.title}</h3>
 								<ServiceIcon name={s.data.icon} />
 							</div>
-							<h3>{s.data.title}</h3>
 							<p>{s.data.summary}</p>
 							<span class="more">read more →</span>
 						</a>
@@ -154,14 +153,20 @@ const services = (await getCollection('services')).sort((a, b) => a.data.order -
 		outline: none;
 	}
 
-	.card-top {
+	/* Title on the left, icon on the right of the same row. */
+	.card-head {
 		display: flex;
-		align-items: flex-start;
+		align-items: center;
 		justify-content: space-between;
 		gap: 1rem;
+		margin-bottom: 0.4rem;
 	}
 
-	.card-top :global(.service-icon) {
+	.card-head h3 {
+		margin: 0;
+	}
+
+	.skills :global(.service-icon) {
 		flex-shrink: 0;
 		width: 1.75rem;
 		height: 1.75rem;
@@ -195,11 +200,6 @@ const services = (await getCollection('services')).sort((a, b) => a.data.order -
 	.skills .cta .more {
 		margin-top: 0;
 		font-weight: 700;
-	}
-
-	.skills code {
-		color: var(--accent);
-		font-size: 0.8rem;
 	}
 
 	.skills h3 {
