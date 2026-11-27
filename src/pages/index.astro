@@ -6,8 +6,6 @@ import ServiceIcon from '../components/ServiceIcon.astro';
 import me from '../assets/me.jpg';
 
 const services = (await getCollection('services')).sort((a, b) => a.data.order - b.data.order);
-const isVideo = (src: string) => /\.(webm|mp4|mov)$/i.test(src);
-const projects = (await getCollection('projects')).sort((a, b) => a.data.order - b.data.order);
 ---
 
 <Base
@@ -37,7 +35,6 @@ const projects = (await getCollection('projects')).sort((a, b) => a.data.order -
 			<a class="btn" href="mailto:yodergilbert1@gmail.com?subject=Hello%20Gilbert">
 				Get in touch →
 			</a>
-			{projects.length > 0 && <a class="jump" href="#projects">See my work ↓</a>}
 			<div class="socials">
 				<a class="social" href="https://www.linkedin.com/in/gilbert-yoder-6330211b3/" target="_blank" rel="noopener">
 					<svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
@@ -82,48 +79,7 @@ const projects = (await getCollection('projects')).sort((a, b) => a.data.order -
 			</li>
 		</ul>
 	</section>
-
-	{
-		projects.length > 0 && (
-			<section id="projects">
-				<h2><span class="hash">##</span> Projects</h2>
-				<ul class="projects">
-					{projects.map(({ id, data }) => {
-						const thumb = data.thumbnail ?? data.media[0].src;
-						return (
-							<li>
-								<a href={`/projects/${id}/`}>
-									<div class="thumb">
-										{isVideo(thumb) ? (
-											<video src={thumb} autoplay muted loop playsinline preload="metadata" aria-hidden="true" />
-										) : (
-											<img src={thumb} alt="" loading="lazy" decoding="async" />
-										)}
-									</div>
-									<div class="card-body">
-										<h3>{data.title}</h3>
-										<p>{data.summary}</p>
-										<span class="more">read more →</span>
-									</div>
-								</a>
-							</li>
-						);
-					})}
-				</ul>
-			</section>
-		)
-	}
 </Base>
-
-<script>
-	// Respect reduced-motion: keep card thumbnails still.
-	if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-		for (const v of document.querySelectorAll<HTMLVideoElement>('.thumb video')) {
-			v.pause();
-			v.removeAttribute('autoplay');
-		}
-	}
-</script>
 
 <style>
 	.hero {
@@ -264,18 +220,6 @@ const projects = (await getCollection('projects')).sort((a, b) => a.data.order -
 		font-size: 0.8rem;
 	}
 
-	.jump {
-		display: inline-block;
-		margin: 1.25rem 0 0 1rem;
-		color: var(--muted);
-		font-size: 0.9rem;
-		text-decoration: none;
-	}
-
-	.jump:hover {
-		color: var(--accent);
-	}
-
 	/* Own line under the Get in touch button. */
 	.socials {
 		display: flex;
@@ -302,83 +246,6 @@ const projects = (await getCollection('projects')).sort((a, b) => a.data.order -
 		height: 1.1em;
 	}
 
-	:global(html) {
-		scroll-behavior: smooth;
-	}
-
-	@media (prefers-reduced-motion: reduce) {
-		:global(html) {
-			scroll-behavior: auto;
-		}
-	}
-
-	#projects {
-		margin-top: 2.5rem;
-		scroll-margin-top: 1rem;
-	}
-
-	.projects {
-		list-style: none;
-		margin: 0;
-		padding: 0;
-		display: grid;
-		gap: 1rem;
-		grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-	}
-
-	.projects a {
-		display: flex;
-		flex-direction: column;
-		height: 100%;
-		border: 1.5px solid var(--line);
-		background: var(--paper-edge);
-		color: inherit;
-		text-decoration: none;
-		transition: transform 0.15s, box-shadow 0.15s;
-	}
-
-	.projects a:hover,
-	.projects a:focus-visible {
-		transform: translate(-2px, -2px);
-		box-shadow: 4px 4px 0 var(--shadow);
-		outline: none;
-	}
-
-	.thumb {
-		aspect-ratio: 16 / 10;
-		overflow: hidden;
-		border-bottom: 1.5px solid var(--line);
-		background: var(--line);
-	}
-
-	.thumb img,
-	.thumb video {
-		display: block;
-		width: 100%;
-		height: 100%;
-		object-fit: cover;
-		object-position: top left;
-	}
-
-	.card-body {
-		display: flex;
-		flex: 1;
-		flex-direction: column;
-		padding: 1rem;
-	}
-
-	.card-body h3 {
-		margin: 0 0 0.4rem;
-		font-size: 1rem;
-		line-height: 1.3;
-	}
-
-	.card-body p {
-		margin: 0 0 0.75rem;
-		color: var(--muted);
-		font-size: 0.85rem;
-	}
-
 	@media (max-width: 680px) {
 		.hero {
 			grid-template-columns: 1fr;
@@ -391,8 +258,7 @@ const projects = (await getCollection('projects')).sort((a, b) => a.data.order -
 			justify-content: center;
 		}
 
-		.skills,
-		.projects {
+		.skills {
 			grid-template-columns: 1fr;
 		}
 	}
